@@ -1,6 +1,10 @@
 ---
 // Component Imports
-import Tour from '../components/Tour.astro';
+import Project from '../components/Project.svelte';
+import Skill from '../components/Skill.svelte';
+import Header from '../components/Header.svelte';
+import Contact from '../components/Contact.svelte';
+import Testimonial from '../components/Testimonial.svelte';
 // You can import components from any supported Framework here!
 
 
@@ -27,49 +31,7 @@ let title = 'My Astro Site';
 </head>
 <body class='antialiased bg-blue-light font-sans font-medium'>
   <script src="https://kit.fontawesome.com/f646f12155.js" crossorigin="anonymous"></script>
-  <header class='bg-white p-6 block flex-col md:flex md:flex-row w-full md:justify-between md:items-start shadow-lg'>
-    <div name='user' class='md:flex'>
-      <img src="./images/edited.png" class='rounded-full w-32 ml-auto mr-auto md:ml-0 md:mr-0'>
-      <div class='flex-col ml-auto mr-auto md:ml-8 md:mr-0'>
-        <h1 class="text-center md:text-left text-4xl sm:text-4xl font-extrabold text-black">
-          Alexander Shold
-        </h1>
-        <h1 class="text-center text-gray-darker md:text-left text-2xl">
-          Full Stack Software Engineer
-        </h1>
-        <!-------DOWNLOAD RESUME BUTTON???-->
-        <!-- <div class='text-center md:text-left text-xl font-serif font-light text-gray self-end'>
-          <i class="fas fa-arrow-circle-down fa-2x mr-2"></i><span class='text-2xl'>Download My Resume</span>
-        </div> -->
-        <!----------------------------------------------->
-        <!--OPTIONAL LINK BUTTONS: ADD LATER?-->
-        <!-- <div class=' my-4 md:mt-2 md:mb-0 ml-0 md:-ml-4 text-center'>
-          <span>
-            <a href='https://www.linkedin.com/in/alexander-shold/' target="_blank">
-              <i class="fab fa-linkedin fa-3x mx-8 md:ml-0 text-gray-dark hover:filter-dark"></i>
-            </a>
-            <a href=''>
-              <i class="fab fa-github fa-3x mx-8 text-gray-dark hover:filter-dark"></i>
-            </a>
-            <a>
-              <i class="fas fa-file-alt fa-3x mx-8 text-gray-dark hover:filter-dark"></i>
-            </a>
-          </span>
-        </div> -->
-        <!--END OPTIONAL BUTTON SECTION-->
-      </div>
-    </div>
-    <div class='mt-2 md:mt-0 md:self-center text-center'>
-      <a
-        class='btn text-2xl font-bold text-white bg-blue rounded px-6 py-4 md:self-center inline-block transition ease-in-out duration-500 hover:bg-blue-dark'
-        href = "mailto:ashold.12@gmail.com"
-        target="_blank"
-      >
-        <i class="fas fa-paper-plane pr-2"></i>
-        Contact Me
-      </a>
-    </div>
-  </header>
+  <Header />
   <div name='main' class='p-6 grid lg:grid-cols-3 gap-6'>
     <div name='primary-section' class='lg:col-start-1 lg:col-end-3 flex-col items-start'>
       <div name='about' class='bg-white rounded p-4 shadow-lg mb-4'>
@@ -90,203 +52,64 @@ let title = 'My Astro Site';
           I'm not going to list this site here since you're already here. This page was made using no javascript/javascript frameworks. It is purely HTML and CSS composed via Tailwind.
         </p>
         <hr class='mt-7 mb-8 text-gray-darker'>
-        <div class='flex flex-wrap sm:flex-nowrap mb-8'>
-          <div class='sm:mr-4 sm:ml-0 sm:w-5/12'>
-            <a href='https://github.com/ashold12/werewolf' target='_blank'>
-              <img src='./images/werewolf.jpg' class='rounded shadow-lg hover:filter-dark transition ease-in-out duration-250'>
-            </a>
-          </div>
-          <div class='sm:w-7/12 mt-0'>
-            <a href='https://github.com/ashold12/werewolf' target='_blank'>
-              <h3 class='sm:mt-0 sm:leading-none font-extrabold mb-2 text-gray-dark hover:underline hover: cursor-pointer'>Werewolf - Browser Party Game</h3>
-            </a>
-            <!-- Werewolf - Browser Party Game -->
-            <p class=''>
-              Developed with a small team of engineers over five days and deployed on AWS. Heavily utlized sockets and event driven architecture to handle the game state. The game features a lobby, real time chat, conditional renders/permissions depending on player role.
-            </p>
-          </div>
-        </div>
-        <div class='flex flex-wrap sm:flex-nowrap mb-8'>
-          <div class='sm:mr-4 sm:ml-0 sm:w-5/12'>
-            <a href='https://github.com/ashold12/endorseMe/tree/master' target='_blank'>
-              <img src='./images/endorse.png' class='rounded shadow-lg hover:filter-dark transition ease-in-out duration-250'>
-            </a>
-          </div>
-          <div class='sm:w-7/12 mt-0'>
-            <a href='https://github.com/ashold12/endorseMe/tree/master' target='_blank'>
-              <h3 class='sm:mt-0 sm:leading-none font-extrabold mb-2 text-gray-dark hover:underline hover: cursor-pointer'>EndorseMe - CLI LinkedIn Automation Tool</h3>
-            </a>
-            <!-- EndorseMe - CLI LinkedIn Automation Tool -->
-            <p class=''>
-              LinkedIn endorsement tool with fully functional command line interface. Built on Node.js using the Puppeteer library and compiled to executable using Nexe. The tool will visit all supplied user URL's in headless browser and fully endorse all skills. The tool has optional connection request setting.
-            </p>
-          </div>
-        </div>
-        <div class='flex flex-wrap sm:flex-nowrap mb-8'>
-          <div class='sm:mr-4 sm:ml-0 sm:w-5/12'>
-            <a href='https://github.com/ashold12/FEC-Catwalk' target='_blank'>
-              <img src='./images/catwalk.png' class='rounded shadow-lg hover:filter-dark transition ease-in-out duration-250'>
-            </a>
-          </div>
-          <div class='sm:w-7/12 mt-0'>
-            <a href='https://github.com/ashold12/FEC-Catwalk' target='_blank'>
-              <h3 class='sm:mt-0 sm:leading-none font-extrabold mb-2 text-gray-dark hover:underline hover: cursor-pointer'>Catwalk - React Retail Web-Portal</h3>
-            </a>
-            <!--Catwalk - React Retail Web-Portal-->
-            <p class=''>
-              Modular reviews component developed for retail web-portal. Utilized pre-existing legacy api to consume data as well as leave comments/reviews/product photos. Featured a modal for submitting new reviews with animated star rating component, sophisticated error handling and review sorting, and react portals for image uploads and report submissions.
-            </p>
-          </div>
-        </div>
-        <div class='flex flex-wrap sm:flex-nowrap mb-8'>
-          <div class='sm:mr-4 sm:ml-0 sm:w-5/12'>
-            <a href='https://github.com/ashold12/SDC' target='_blank'>
-              <img src='./images/backend.jpg' class='rounded shadow-lg hover:filter-dark transition ease-in-out duration-250'>
-            </a>
-          </div>
-          <div class='sm:w-7/12 mt-0'>
-            <a href='https://github.com/ashold12/SDC' target='_blank'>
-              <h3 class='sm:mt-0 sm:leading-none font-extrabold mb-2 text-gray-dark hover:underline hover: cursor-pointer'>REST In Peace - Scaled Backend API/Microservice</h3>
-            </a>
-            <p class=''>
-              Refactored legacy RESTFUL API with mirrored endpoints/request parameters to increase throughput. Imported and nested 15 million records of user data via Mongo shell, and used aggregation pipeline to nest data into highly consumable format.  Deployed on 8 AWS instances with Nginx load balancer.
-            </p>
-          </div>
-        </div>
+        <Project
+                title = "Werewolf - Browser Party Game"
+                link = "https://github.com/ashold12/werewolf"
+                img = "./images/werewolf.jpg"
+                text = 'Developed with a small team of engineers over five days and deployed on AWS. Heavily utlized sockets and event driven architecture to handle the game state. The game features a lobby, real time chat, conditional renders/permissions depending on player role.'
+        />
+        <Project
+                title = "EndorseMe - CLI LinkedIn Automation Tool"
+                link = "https://github.com/ashold12/endorseMe/tree/master"
+                img = "./images/endorse.png"
+                text = 'Developed with a small team of engineers over five days and deployed on AWS. Heavily utlized sockets and event driven architecture to handle the game state. The game features a lobby, real time chat, conditional renders/permissions depending on player role.'
+        />
+        <Project
+                title = "Catwalk - React Retail Web-Portal"
+                link = "https://github.com/ashold12/FEC-Catwalk"
+                img = "./images/catwalk.png"
+                text = "Modular reviews component developed for retail web-portal. Utilized pre-existing legacy api to consume data as well as leave comments/reviews/product photos. Featured a modal for submitting new reviews with animated star rating component, sophisticated error handling and review sorting, and react portals for image uploads and report submissions."
+
+        />
+        <Project
+                title = "REST In Peace - Scaled Backend API/Microservice"
+                link = "https://github.com/ashold12/SDC"
+                img = "./images/backend.jpg"
+                text = 'Refactored legacy RESTFUL API with mirrored endpoints/request parameters to increase throughput. Imported and nested 15 million records of user data via Mongo shell, and used aggregation pipeline to nest data into highly consumable format.  Deployed on 8 AWS instances with Nginx load balancer.'
+        />
       </div>
     </div>
     <!-- SECONDARY ELEMENTS-->
     <div name='secondary-section' class='lg:col-start-3 flex-col items-start'>
-      <div class='bg-white rounded p-4 w-full mb-4 shadow-lg'>
-        <p class='mb-4'>
-          <i class="text-gray-darker fas fa-map-marker-alt fa-lg fa-fw fr-2 mr-1"></i>
-          Duluth, MN
-        </p>
-        <p class='mb-4'>
-          <i class="text-gray-darker fas fa-envelope fa-lg fa-fw fr-2 mr-1"></i>
-          <a class='hover:underline text-blue' href = "mailto:ashold.12@gmail.com" target="_blank">
-            ashold.12@gmail.com
-          </a>
-        </p>
-        <p class='mb-4'>
-          <i class="text-gray-darker fab fa-linkedin fa-lg fa-fw fr-2 mr-1"></i>
-          <a class='hover:underline text-blue' href = "https://linkedin.com/in/alexander-shold/" target="_blank">
-            linkedin.com/in/alexander-shold/
-          </a>
-        </p>
-        <p>
-          <i class="text-gray-darker fab fa-github fa-lg fa-fw fr-2 mr-1"></i>
-          <a class='hover:underline text-blue' href = "https://github.com/ashold12" target="_blank">github.com/ashold12</a>
-        </p>
-      </div>
+      <Contact />
       <div class='bg-white rounded p-6 pl-4 w-full shadow-lg text-lg mb-4'>
         <h2>Skills</h2>
         <p class='mb-4 text-base'>I possess high expertise in modern Javascript, with experience across the complete stack and development cycle.</p>
         <h3 class='text-gray-darker mb-1 mt-2 text-lg'>Front End</h3>
         <hr class='mb-2 text-gray-darker'>
-        <!-- SKILLS r1 -->
         <div class='flex flex-wrap justify-between'>
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/javascript.png'/>
-            </div>
-            <span class='self-center'>Javascript</span>
-          </div>
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 md:min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/react.png'/>
-            </div>
-            <span class='self-center'>ReactJS</span>
-          </div>
-          <!-- row2 -->
-          <div class='mb-4  font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/html5.png'/>
-            </div>
-            <span class='self-center'>HTML5</span>
-          </div>
-          <!--*** BREAKPOINT ****-->
-          <!-- <div class=' w-0 xs:w-full'></div> -->
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 md:min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 max-w-40px object-contain inline-block mr-2'>
-              <img src='./images/logos/css3.png'/>
-            </div>
-            <span class='self-center'>CSS3</span>
-          </div>
-          <!-- row3 -->
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12 max-w-134'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/tailwind.svg'/>
-            </div>
-            <span class='self-center'>Tailwind</span>
-          </div>
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 md:min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/jquery.png'/>
-            </div>
-            <span class='self-center'>jQuery</span>
-          </div>
-          <!----------- Backend ------------->
-          <h3 class='text-gray-darker mb-1 mt-2 w-full text-lg'>Back End</h3>
-          <hr class='mb-2 text-gray-darker w-full'>
-
-          <!-- SKILLS r1 -->
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/node.png'/>
-            </div>
-            <span class='self-center'>Node.js</span>
-          </div>
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/express.png'/>
-            </div>
-            <span class='self-center'>Express</span>
-          </div>
-          <!-- row2 -->
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/mongo.png'/>
-            </div>
-            <span class='self-center'>MongoDB</span>
-          </div>
-          <!---***LINE BREAK FOR FLEX ROWS***-->
-          <!-- <div class='xs:w-full'></div> -->
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 max-w-40px object-contain inline-block mr-2'>
-              <img src='./images/logos/mysql.png'/>
-            </div>
-            <span class='self-center'>MySql</span>
-          </div>
-          <!-- row3 -->
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/aws.png'/>
-            </div>
-            <span class='self-center'>AWS</span>
-          </div>
-          <div class='mb-4 font-bold text-sm text-gray-darker flex w-134 xsm:w-4/12 xmd:w-134 min-w-134 xl:w-4/12'>
-            <div class='w-40 h-40 object-contain inline-block mr-2'>
-              <img src='./images/logos/socket.png'/>
-            </div>
-            <span class='self-center'>Socket.io</span>
-          </div>
-        </div>
+            <!-- SKILLS r1 -->
+            <Skill title='Javascript' image='./images/logos/javascript.png'/>
+            <Skill title='ReactJS' image='./images/logos/react.png'/>
+            <Skill title='HTML5' image='./images/logos/html5.png'/>
+            <Skill title='CSS3' image='./images/logos/css3.png'/>
+            <Skill title='Tailwind' image='./images/logos/tailwind.svg'/>
+            <Skill title='jQuery' image='./images/logos/jquery.png' />
+                <!-- Backend -->
+            <h3 class='text-gray-darker mb-1 mt-2 w-full text-lg'>
+                Back End
+            </h3>
+            <hr class='mb-2 text-gray-darker w-full'>
+            <Skill title='Node.js' image='./images/logos/node.png'/>
+            <Skill title='Express' image='./images/logos/express.png'/>
+            <Skill title='MongoDB' image='./images/logos/mongo.png'/>
+            <Skill title='MySql' image='./images/logos/mysql.png'/>
+            <Skill title='AWS' image='./images/logos/aws.png'/>
+            <Skill title='Socket.io' image='./images/logos/socket.png'/>
       </div>
+    </div>
       <!-- TESTIMONIALS -->
-      <div class='bg-white rounded p-6 pl-4 w-full shadow-lg text-lg'>
-        <h2 class='mb-8'>Testimonials</h2>
-        <blockquote class='border-l-6 border-blue py-3 px-10 mb-4'>
-          <p class='mt-0 text-base text-gray-dark italic'>
-            <i class="fas fa-quote-left mr-4 text-blue"></i>
-            I had the privilege of working with Alex on a number of projects and can honestly say that he is not only a talented software engineer but is a great teammate. Alex never shies away from a challenge and is first to volunteer to tackle it. His problem-solving skills are unparalleled. Any team would be lucky to have him!
-          </p>
-        </blockquote>
-        <p class='text-sm pl-11'>
-          <span class='font-semibold text-gray-darker'>Irene Hodge</span><br/>
-          <span class='text-gray-dark'>Cohort Mate</span>
-        </p>
-      </div>
+      <Testimonial />
     </div>
   </div>
   <!-- <h1>Hi it's me Alexander Shold</h1> -->
