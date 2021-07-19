@@ -1,11 +1,12 @@
+<script>
+  import face from "../images/edited.png";
+</script>
+
 <header
   class="bg-white p-6 block flex-col md:flex md:flex-row w-full md:justify-between md:items-start shadow-lg"
 >
   <div name="user" class="md:flex">
-    <img
-      src="./images/edited.png"
-      class="rounded-full w-32 ml-auto mr-auto md:ml-0 md:mr-0"
-    />
+    <img src={face} class="rounded-full w-32 ml-auto mr-auto md:ml-0 md:mr-0" />
     <div class="flex-col ml-auto mr-auto md:ml-8 md:mr-0">
       <h1
         class="text-center md:text-left text-4xl sm:text-4xl font-extrabold text-black"
